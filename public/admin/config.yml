@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: climate-reaction-website
+  repo: git-gateway
   branch: main
 media_folder: "public/uploads"
 public_folder: "/uploads"
