@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-org/your-repo   # ← CHANGE THIS to your GitHub org/repo
+  repo: leefeinman/climate-reaction-website
   branch: main
 media_folder: "public/uploads"
 public_folder: "/uploads"
