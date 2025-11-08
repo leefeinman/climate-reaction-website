@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auth</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script>
+      // Open the Netlify Identity sign-up dialog as soon as the page loads
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", () => {
+          window.netlifyIdentity.open("signup");
+        });
+      } else {
+        console.error("Netlify Identity widget failed to load.");
+      }
+    </script>
+    <p>If nothing pops up, refresh once.</p>
+  </body>
+</html>
