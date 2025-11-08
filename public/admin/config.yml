@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: your-org/your-repo   # ← CHANGE THIS to your GitHub org/repo
+  branch: main
+media_folder: "public/uploads"
+public_folder: "/uploads"
+collections:
+  - name: explainers
+    label: Policy Explainers
+    folder: "src/content/explainers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, required: false }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Hero Image, name: heroImage, widget: image, required: false }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - name: roundups
+    label: Weekly Roundups
+    folder: "src/content/roundups"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - name: actions
+    label: Action Items
+    folder: "src/content/actions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - name: events
+    label: Events
+    folder: "src/content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - name: team
+    label: Team
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Name, name: title, widget: string }
+      - { label: Role, name: summary, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }

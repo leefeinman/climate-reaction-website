@@ -1,0 +1,45 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+const explainers = (await getCollection("explainers")).slice(0,3);
+const roundups = (await getCollection("roundups")).slice(0,3);
+const actions = (await getCollection("actions")).slice(0,3);
+---
+<Base>
+  <Header />
+  <Hero />
+
+  <section class="px-6 py-12">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <h2 class="font-semibold mb-3">Latest Explainers</h2>
+        <ul class="space-y-3">
+          {explainers.map(p => (
+            <li><a class="underline" href={`/explainers/${p.slug}/`}>{p.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-semibold mb-3">Weekly Roundups</h2>
+        <ul class="space-y-3">
+          {roundups.map(p => (
+            <li><a class="underline" href={`/roundups/${p.slug}/`}>{p.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-semibold mb-3">Action Items</h2>
+        <ul class="space-y-3">
+          {actions.map(p => (
+            <li><a class="underline" href={`/actions/${p.slug}/`}>{p.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

@@ -1,0 +1,6 @@
+# Example: require a review from policy + comms leads
+/src/content/explainers/  @your-org/policy-leads
+/src/content/roundups/    @your-org/comms
+/src/content/actions/     @your-org/comms
+/src/content/events/      @your-org/comms
+/src/content/team/        @your-org/admins
