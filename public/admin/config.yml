@@ -1,7 +1,7 @@
 backend:
-  name: github
-  repo: leefeinman/climate-reaction-website
+  name: git-gateway
   branch: main
+publish_mode: editorial_workflow
 media_folder: "public/uploads"
 public_folder: "/uploads"
 collections:
