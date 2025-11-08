@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: leefeinman/climate-reaction-website
+  repo: climate-reaction-website
   branch: main
 media_folder: "public/uploads"
 public_folder: "/uploads"
