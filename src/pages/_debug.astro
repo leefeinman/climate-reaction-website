@@ -1,0 +1,1 @@
+---import { getCollection } from "astro:content";const all = await getCollection("posts"); // no filters---<h1>Debug</h1><p>Found: {all.length} items</p><ul>  {all.map((e) => (    <li>{e.id} — {(e.data && e.data.title) || "(no title)"} — {String(e.data?.category)}</li>  ))}</ul>

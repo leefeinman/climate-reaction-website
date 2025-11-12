@@ -1,14 +1,117 @@
 ---
+// src/components/Header.astro
+export interface Props {
+  active?: 'home' | 'policy' | 'misinfo' | 'education' | 'join';
+}
+const { active = 'home' } = Astro.props;
+
+// tiny helper
+const isCurrent = (key: string) => active === key ? ' w--current' : '';
 ---
-<header class="px-6 py-4 border-b">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
-    <a href="/" class="font-semibold">Climate Policy for Scientists</a>
-    <nav class="flex gap-4 text-sm">
-      <a href="/explainers">Explainers</a>
-      <a href="/roundups">Roundups</a>
-      <a href="/actions">Action Items</a>
-      <a href="/events">Events</a>
-      <a href="/team">Team</a>
-    </nav>
-  </div>
-</header>
+ 			<header class="header-area">
+ 				<div class="w-layout-blockcontainer container w-container">
+ 					<div class="header-wrap" data-w-id="cbb32482-8282-e6b9-8fab-3904d54f3c89">
+ 						<a aria-current="page" class="nav-logo-wrap w-inline-block w--current" href="/">
+ 						<img alt="Logo" class="nav-logo" loading="lazy" src="assets/img/Climate-reAction_logo1_dark.png" style="height: 50px; width: auto;">
+ 						<img alt="Logo" class="nav-logo-md" loading="lazy" src="assets/img/68db8aca09581eef79dab946_arvora-white-9794e42a.svg">
+ 						</a>
+ 						<ul class="nav" role="list">
+ 							<li class="nav-item">
+ 								<a aria-current="page" class="nav-link w--current" href="/">Home</a>
+ 							</li>
+ 							<li class="nav-item">
+ 								<a class="nav-link" href="/climate-policy">Policy</a>
+ 							</li>
+ 							<li class="nav-item">
+ 								<a class="nav-link" href="/climate-misinformation">Misinformation</a>
+ 							</li>
+ 							<li class="nav-item">
+ 								<a class="nav-link" href="/climate-education">Education</a>
+ 							</li>
+ 							
+ 							
+ 							<!-- This is an example of a dropdown item in the menu bar
+ 								<li class="nav-item">
+ 								 <div class="dropdown w-dropdown" data-delay="0" data-hover="false">
+ 								  <div class="dropdown-toggle w-dropdown-toggle">
+ 								   <div class="dropdown-icon w-icon-dropdown-toggle">
+ 								   </div>
+ 								   <div class="dropdown-text">
+ 								    Pages
+ 								   </div>
+ 								  </div>
+ 								  <nav class="dropdown-navigation w-dropdown-list">
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/blog/the-future-of-solar-energy-trends-innovations">
+ 								    Blog Details
+ 								   </a>
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/service/wind-power">
+ 								    Service Details
+ 								   </a>
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/templates/style-guide">
+ 								    Style Guide
+ 								   </a>
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/templates/changelog">
+ 								    Changelog
+ 								   </a>
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/templates/licenses">
+ 								    Licenses
+ 								   </a>
+ 								   <a class="dropdown-link w-dropdown-link" href="https://arvora.webflow.io/404">
+ 								    404
+ 								   </a>
+ 								  </nav>
+ 								 </div>
+ 								</li>
+ 							-->
+ 							
+ 						</ul>
+ 						<div class="nav-right">
+ 							<div class="btn-nav">
+ 								<a class="btn-secondary w-inline-block" href="/join">
+ 									<div>Join</div>
+ 								</a>
+ 							</div>
+ 							<div class="offcanvas-icon">
+ 								<img alt="Icon" class="menu-icon" loading="lazy" src="assets/img/68db87e2c8de436eafaa70c9_menu-d0a0fc24.svg">
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>
+ 				<div class="offcanvas-main">
+ 					<div class="offcanvas-wrap">
+ 						<div class="offcanvas-top">
+ 							<a class="offcanvas-logo-wrap w-inline-block" href="index.html#">
+ 							<img alt="Arvora" class="offcanvas-logo" src="assets/img/68cd41b9a9a3bc6791cb1c8d_arvora-cf64df41.svg" width="Auto">
+ 							</a>
+ 							<img alt="Close" class="close-icon" data-w-id="d796b440-c147-1529-3014-cb4222a1441c" loading="lazy" src="assets/img/68db9d15935a96738fbf50cc_close-b08bdcb1.svg">
+ 						</div>
+ 						<ul class="offcanvas-nav" role="list">
+ 							<li class="offcanvas-nav-item">
+ 								<a aria-current="page" class="offcanvas-nav-link w--current" href="/">
+ 								Home
+ 								</a>
+ 							</li>
+ 							<li class="offcanvas-nav-item">
+ 								<a class="offcanvas-nav-link" href="https://arvora.webflow.io/about">
+ 								About
+ 								</a>
+ 							</li>
+ 							<li class="offcanvas-nav-item">
+ 								<a class="offcanvas-nav-link" href="https://arvora.webflow.io/service">
+ 								Service
+ 								</a>
+ 							</li>
+ 							<li class="offcanvas-nav-item">
+ 								<a class="offcanvas-nav-link" href="https://arvora.webflow.io/blog">
+ 								Blog
+ 								</a>
+ 							</li>
+ 							<li class="offcanvas-nav-item">
+ 								<a class="offcanvas-nav-link" href="https://arvora.webflow.io/contact">
+ 								Contact
+ 								</a>
+ 							</li>
+ 						</ul>
+ 					</div>
+ 				</div>
+ 			</header>
