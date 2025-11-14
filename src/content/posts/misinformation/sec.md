@@ -5,7 +5,7 @@ blog_built_at: 2025-11-13_00:05
 blog_number: 1
 blog_slug: policy_1_methane-myths-in-the-media
 date: 2025-11-12
-image: assets/img/earth_at_night.jpg
+image: /assets/img/earth_at_night.jpg
 keywords:
 - methane
 - media

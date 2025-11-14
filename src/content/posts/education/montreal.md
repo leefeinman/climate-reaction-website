@@ -5,7 +5,7 @@ blog_built_at: 2025-11-12_23:06
 blog_number: 1
 blog_slug: education_1_the-montreal-protocol-how-the-world-healed-its-sky
 date: 2025-11-12
-image: assets/img/earth_at_night.jpg
+image: /assets/img/earth_at_night.jpg
 keywords:
 - ozone layer
 - CFCs
