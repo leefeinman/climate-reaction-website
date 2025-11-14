@@ -1,1 +1,166 @@
----import Site from "../layouts/Site.astro";---<Site title="Climate Misinformation">    <section class="banner-area">        <div class="w-layout-blockcontainer container w-container">            <div class="banner-wrap">                <h1 data-w-id="b06636fc-766b-824c-444b-3fb25ff3ec1f" class="heading-two text-white">                    Misinformation, Debunked                </h1>                <p data-w-id="c8f3c719-28f8-6cb1-447f-83dd2ef807c8" class="section-content text-white indent-70">                    Clear, first-principles explanations revealing how scientific fundamentals are often misused to                    spread climate myths. Each example traces the core misunderstanding and the actual evidence.                </p>            </div>        </div>        <div class="banner-img-wrap">            <img              src="assets/img/earth_at_night.jpg"              loading="lazy"              alt="Misinformation page banner"              class="banner-img"              style="object-position: 50% 7%;"            />        </div>    </section>    <section class="service-area">        <div class="w-layout-blockcontainer container w-container">            <div class="w-dyn-list">                <div role="list" class="w-dyn-items">                    <!-- Myth 1 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">01</div>                                <a href="#" class="service-title">“Climate change is just natural variability.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        Natural cycles exist—but cannot explain the observed rate or magnitude of modern                                        warming. Physics-based attribution studies show the current energy imbalance                                        aligns with greenhouse gas forcing, not orbital or solar changes.                                    </p>                                </div>                            </div>                        </div>                    </div>                    <!-- Myth 2 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">02</div>                                <a href="#" class="service-title">“CO₂ is a trace gas—too small to matter.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        CO₂’s radiative importance depends on infrared absorption, not concentration                                        alone. Even trace gases can dominate radiative forcing when they absorb in                                        otherwise transparent atmospheric windows.                                    </p>                                </div>                            </div>                        </div>                    </div>                    <!-- Myth 3 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">03</div>                                <a href="#" class="service-title">“Models can’t be trusted—they’re always wrong.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        Models are testable physical frameworks. While imperfect, they reproduce                                        large-scale energy balance and trends verified by satellite and surface                                        observations. Their uncertainties are quantifiable, not disqualifying.                                    </p>                                </div>                            </div>                        </div>                    </div>                    <!-- Myth 4 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">04</div>                                <a href="#" class="service-title">“Scientists disagree on global warming.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        Multiple independent studies find over 97 % of climate scientists agree that                                        human activity is warming the planet. Apparent “debate” often arises from                                        misrepresentation or non-expert amplification.                                    </p>                                </div>                            </div>                        </div>                    </div>                    <!-- Myth 5 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">05</div>                                <a href="#" class="service-title">“The climate has changed before—so this is normal.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        Past climate changes were driven by orbital, volcanic, and solar variations                                        acting over millennia. Today’s rapid shift—occurring within decades—matches the                                        fingerprint of anthropogenic greenhouse forcing.                                    </p>                                </div>                            </div>                        </div>                    </div>                    <!-- Myth 6 -->                    <div role="listitem" class="w-dyn-item">                        <div class="service-item">                            <div class="service-item-left">                                <div class="service-number">06</div>                                <a href="#" class="service-title">“It’s cold outside—so global warming must be fake.”</a>                                <div class="service-info">                                    <p class="service-summary">                                        Weather and climate operate on different scales. Local cold events do not negate                                        global trends; in fact, a warmer atmosphere can amplify extreme patterns by                                        altering jet-stream dynamics and moisture availability.                                    </p>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section></Site>
+---
+import Site from "../layouts/Site.astro";
+---
+
+<Site title="Climate Misinformation">
+    <section class="banner-area">
+        <div class="w-layout-blockcontainer container w-container">
+            <div class="banner-wrap">
+                <h1 data-w-id="b06636fc-766b-824c-444b-3fb25ff3ec1f" class="heading-two text-white">
+                    Misinformation, Debunked
+                </h1>
+                <p data-w-id="c8f3c719-28f8-6cb1-447f-83dd2ef807c8" class="section-content text-white indent-70">
+                    Clear, first-principles explanations revealing how scientific fundamentals are often misused to
+                    spread climate myths. Each example traces the core misunderstanding and the actual evidence.
+                </p>
+            </div>
+        </div>
+        <div class="banner-img-wrap">
+            <img
+              src="assets/img/earth_at_night.jpg"
+              loading="lazy"
+              alt="Misinformation page banner"
+              class="banner-img"
+              style="object-position: 50% 7%;"
+            />
+
+        </div>
+    </section>
+
+    <section class="service-area">
+        <div class="w-layout-blockcontainer container w-container">
+            <div class="w-dyn-list">
+                <div role="list" class="w-dyn-items">
+<!-- LIST:MISINFO:START -->
+  <div role="listitem" class="w-dyn-item">
+    <div class="service-item">
+      <div class="service-item-left">
+        <div class="service-number">01</div>
+        <a href="/policy_1_methane-myths-in-the-media" class="service-title">"Methane Myths in the Media"</a>
+        <div class="service-info">
+          <p class="service-summary">How methane is portrayed vs how it's actually measured.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div role="listitem" class="w-dyn-item">
+      <div class="service-item">
+        <div class="service-item-left">
+          <div class="service-number">02</div>
+          <a href="/policy_1_methane-myths-in-the-media" class="service-title">"Methane Myths in the Media"</a>
+          <div class="service-info">
+            <p class="service-summary">How methane is portrayed vs how it's actually measured.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+<!-- LIST:MISINFO:END -->
+
+                    <!-- Myth 1 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">03</div>
+                                <a href="#" class="service-title">“Climate change is just natural variability.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        Natural cycles exist—but cannot explain the observed rate or magnitude of modern
+                                        warming. Physics-based attribution studies show the current energy imbalance
+                                        aligns with greenhouse gas forcing, not orbital or solar changes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Myth 2 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">04</div>
+                                <a href="#" class="service-title">“CO₂ is a trace gas—too small to matter.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        CO₂’s radiative importance depends on infrared absorption, not concentration
+                                        alone. Even trace gases can dominate radiative forcing when they absorb in
+                                        otherwise transparent atmospheric windows.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Myth 3 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">05</div>
+                                <a href="#" class="service-title">“Models can’t be trusted—they’re always wrong.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        Models are testable physical frameworks. While imperfect, they reproduce
+                                        large-scale energy balance and trends verified by satellite and surface
+                                        observations. Their uncertainties are quantifiable, not disqualifying.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Myth 4 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">06</div>
+                                <a href="#" class="service-title">“Scientists disagree on global warming.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        Multiple independent studies find over 97 % of climate scientists agree that
+                                        human activity is warming the planet. Apparent “debate” often arises from
+                                        misrepresentation or non-expert amplification.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Myth 5 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">07</div>
+                                <a href="#" class="service-title">“The climate has changed before—so this is normal.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        Past climate changes were driven by orbital, volcanic, and solar variations
+                                        acting over millennia. Today’s rapid shift—occurring within decades—matches the
+                                        fingerprint of anthropogenic greenhouse forcing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Myth 6 -->
+                    <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                            <div class="service-item-left">
+                                <div class="service-number">08</div>
+                                <a href="#" class="service-title">“It’s cold outside—so global warming must be fake.”</a>
+                                <div class="service-info">
+                                    <p class="service-summary">
+                                        Weather and climate operate on different scales. Local cold events do not negate
+                                        global trends; in fact, a warmer atmosphere can amplify extreme patterns by
+                                        altering jet-stream dynamics and moisture availability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</Site>

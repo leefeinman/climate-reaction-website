@@ -3601,6 +3601,18 @@ blockquote {
   background-color: var(--white--100);
 }
 
+.step-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.step-card-link:hover,
+.step-card-link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 .step-number {
   padding-bottom: var(--_sizes---space--space-60);
   color: var(--gray--400);
@@ -3793,6 +3805,13 @@ blockquote {
   margin-bottom: var(--_sizes---space--space-24);
   border-radius: var(--_sizes---radius--radius-16);
 }
+
+.blog-inline-image {
+  border-radius: var(--_sizes---radius--radius-16);
+  max-width: 100%;
+  height: auto;
+}
+
 
 .pt-10 {
   margin-top: var(--_sizes---space--space-10);
