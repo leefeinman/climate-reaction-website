@@ -1,11 +1,18 @@
 ---
 author: Lee Feinman
+blog_built: true
+blog_built_at: 2025-11-16_06:42
+blog_number: 2
+blog_slug: education_2_this-is-a-test-blog-post
 date: 2025-11-15
 image: /assets/img/scientists-for-future.jpg
 keywords:
 - activism
+list_built: true
+list_built_at: 2025-11-16_06:42
 section: education
-short_description: It is incumbent upon us scientists to stay active in society as pushers of change. 
+short_description: It is incumbent upon us scientists to stay active in society as
+  pushers of change.
 title: This is a test blog post
 ---
 
