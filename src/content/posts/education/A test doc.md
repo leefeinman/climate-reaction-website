@@ -6,6 +6,7 @@ keywords:
 - activism
 section: education
 short_description: It is incumbent upon us scientists to stay active in society as pushers of change. 
+title: This is a test blog post
 ---
 
 # The Montreal Protocol: How the World Healed Its Sky
