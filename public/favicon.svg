@@ -21,13 +21,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.047759259"
-     inkscape:cx="2407.9101"
-     inkscape:cy="-2481.1943"
+     inkscape:zoom="0.040924836"
+     inkscape:cx="1563.8425"
+     inkscape:cy="-2089.1959"
      inkscape:window-width="1152"
      inkscape:window-height="780"
-     inkscape:window-x="0"
-     inkscape:window-y="38"
+     inkscape:window-x="460"
+     inkscape:window-y="326"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg1" />
   <style
@@ -38,28 +38,29 @@
         }
     </style>
   <rect
-     style="opacity:0.925714;fill:#000000;stroke-width:1.04837"
+     style="opacity:0.925714;fill:#000000;stroke-width:1.20567"
      id="rect3"
-     width="5662.4658"
-     height="5641.5278"
-     x="167.50681"
-     y="-3706.0874"
-     ry="1799.1235" />
+     width="6500"
+     height="6500"
+     x="-335.01355"
+     y="-4103.916"
+     ry="2072.8965"
+     inkscape:export-filename="favicon2.svg"
+     inkscape:export-xdpi="1"
+     inkscape:export-ydpi="1" />
   <text
      xml:space="preserve"
      style="font-size:3370.67px;line-height:0.84;font-family:'.Baghdad PUA';-inkscape-font-specification:'.Baghdad PUA';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:0.925714;fill:#ffffff;stroke-width:1.20567"
-     x="445.42929"
-     y="150.87692"
+     x="99.96743"
+     y="287.03888"
      id="text1"><tspan
        sodipodi:role="line"
        id="tspan1"
-       x="445.42929"
-       y="150.87692"
-       style="fill:#ffffff"><tspan
-         style="font-size:2666.67px"
-         id="tspan4">C</tspan><tspan
-         style="font-size:2000px;fill:#ffffff"
-         id="tspan2">r</tspan><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Instrument Sans';-inkscape-font-specification:'Instrument Sans Italic';fill:#ffffff"
-         id="tspan3">A</tspan></tspan></text>
+       x="99.96743"
+       y="287.03888"
+       style="fill:#ffffff">C<tspan
+   style="font-size:2000px;fill:#ffffff"
+   id="tspan2">r</tspan><tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Instrument Sans';-inkscape-font-specification:'Instrument Sans Italic';fill:#ffffff"
+   id="tspan3">A</tspan></tspan></text>
 </svg>
