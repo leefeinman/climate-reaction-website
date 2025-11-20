@@ -2407,29 +2407,38 @@ blockquote {
 
 .brand-wrap {
   padding-top: var(--_sizes---space--space-80);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
-  align-items: stretch;
   overflow: hidden;
 }
 
-.brand-inner {
-  display: flex;               /* single horizontal row */
-  flex-wrap: nowrap;           /* no wrapping onto lines */
+.brand-track {
+  display: flex;
+  flex-wrap: nowrap;
   gap: clamp(2rem, 4vw, 5rem);
   align-items: center;
   will-change: transform;
-  animation: brand-marquee 24s linear infinite;
+  animation: brand-marquee-loop 10s linear infinite;
 }
-.brand-item { flex: 0 0 auto; }  /* logos don’t shrink */
-.brand-logo { height: 36px; width: auto; display: block; }
-@keyframes brand-marquee {
+
+.brand-item { 
+  flex: 0 0 auto;
+  border-radius: var(--_sizes---radius--radius-10);
+  background-color: var(--_white---200\<deleted\|variable-ed8fb7cc-5ceb-4ef2-341e-b576a6433c1d\>);
+  align-items: center;
+  padding: 37px 30px;
+  display: flex;
+}
+
+.brand-logo {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+@keyframes brand-marquee-loop {
   from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }  /* see note below */
+  to   { transform: translateX(-50%); }
 }
+
 
 .brand-item {
   border-radius: var(--_sizes---radius--radius-10);
@@ -5932,4 +5941,81 @@ blockquote {
   #w-node-_88f9f806-eb23-3c83-6213-6b4f64ca80ce-8d90a5c5, #w-node-_6d60a37e-cbfb-76d4-0524-84b6c9c19fb7-8d90a5c5 {
     order: -9999;
   }
+}
+
+.join-success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.join-success-card {
+  position: relative;
+  max-width: 480px;
+  width: 90%;
+  border-radius: var(--_sizes---radius--radius-16, 16px);
+  overflow: hidden;
+}
+
+/* This div behaves like an image background with rounded corners */
+.join-success-image {
+  position: relative;
+  background: radial-gradient(circle at top left, #7bdcff, #2d3c61 60%, #111827);
+  padding: 32px 24px;
+  color: var(--white--100, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* If you want an actual image file instead, you can do:
+.join-success-image {
+  background-image: url("/assets/images/join-success.png");
+  background-size: cover;
+  background-position: center;
+}
+*/
+
+.join-success-text {
+  max-width: 360px;
+  text-align: center;
+}
+
+.join-success-text h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.join-success-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Close (X) button */
+.join-success-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--white--100, #fff);
+  border: none;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-success-close:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
