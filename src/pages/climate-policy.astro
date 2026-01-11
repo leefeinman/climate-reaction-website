@@ -2,140 +2,432 @@
 import Site from "../layouts/Site.astro";
 ---
 
-<Site title="Action Resources">
-  <section class="banner-area">
-    <div class="container">
-      <h1 class="heading-two text-white">Action Resources</h1>
-      <p class="section-content text-white">
-        Resources for staying up to date on climate policy and taking action.
-      </p>
-    </div>
+<Site title="Climate Policy">
 
-    <div class="banner-img-wrap">
-      <img
-        src="/assets/img/action_resources.png"
-        loading="lazy"
-        alt="Action resources banner"
-        class="banner-img"
-      />
-    </div>
-  </section>
-
-  {/* Use an existing padded section style for consistency */}
-  <section class="service-area">
-    <div class="container">
-
-      {/* Tabs: reuse existing pill styles (tag-link + w--current) */}
-      <div class="blog-tab-menu" data-resource-tabs>
-        <button class="tag-link w--current js-resource-tab" type="button" data-topic="all" aria-pressed="true">
-          All
-        </button>
-        <button class="tag-link js-resource-tab" type="button" data-topic="action" aria-pressed="false">
-          Action
-        </button>
-        <button class="tag-link js-resource-tab" type="button" data-topic="news" aria-pressed="false">
-          News
-        </button>
-        <button class="tag-link js-resource-tab" type="button" data-topic="policy" aria-pressed="false">
-          Policy
-        </button>
-      </div>
-
-      {/* Grid: reuse an existing 3-col grid pattern; your cards handle their own look */}
-      <div class="blog-coll-related">
-        <a
-          href="https://agu.quorum.us/home/"
-          target="_blank"
-          rel="noopener"
-          class="solution-card resource-card resource-card--teal js-resource-card"
-          data-topics="action policy"
-        >
-          <h3 class="resource-card__title">AGU Policy Action Center</h3>
-          <p class="resource-card__desc">
-            Resources to contact your representatives about climate policy and stay up to date on current issues.
-          </p>
-        </a>
-
-        <a
-          href="https://www.ucs.org/"
-          target="_blank"
-          rel="noopener"
-          class="solution-card resource-card resource-card--brown js-resource-card"
-          data-topics="action news policy"
-        >
-          <h3 class="resource-card__title">Union of Concerned Scientists</h3>
-          <p class="resource-card__desc">Info, resources, and news on climate policy and more.</p>
-        </a>
-
-        <a
-          href="https://www.aps.org/publications/apsnews/policy"
-          target="_blank"
-          rel="noopener"
-          class="solution-card resource-card resource-card--purple js-resource-card"
-          data-topics="news policy"
-        >
-          <h3 class="resource-card__title">APS Policy News</h3>
-          <p class="resource-card__desc">
-            News on how federal decisions impact higher education and scientific research.
-          </p>
-        </a>
-
-        <a
-          href="https://www.climatepolicydashboard.org/states/"
-          target="_blank"
-          rel="noopener"
-          class="solution-card resource-card resource-card--blue js-resource-card"
-          data-topics="action policy"
-        >
-          <h3 class="resource-card__title">Climate Policy Dashboard</h3>
-          <p class="resource-card__desc">Database and comparison tool for climate policy by state.</p>
-        </a>
-
-        <a
-          href="https://www.lcv.org/congressional-scorecard/"
-          target="_blank"
-          rel="noopener"
-          class="solution-card resource-card resource-card--green js-resource-card"
-          data-topics="action policy"
-        >
-          <h3 class="resource-card__title">Congressional Environmental Scorecards</h3>
-          <p class="resource-card__desc">Database of environmental policy decisions by members of Congress.</p>
-        </a>
-
-        {/* Add more cards here */}
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const tabs = Array.from(document.querySelectorAll(".js-resource-tab"));
-    const cards = Array.from(document.querySelectorAll(".js-resource-card"));
-
-    function setActiveTab(activeTopic) {
-      tabs.forEach((btn) => {
-        const isActive = btn.dataset.topic === activeTopic;
-        btn.classList.toggle("w--current", isActive);
-        btn.setAttribute("aria-pressed", String(isActive));
-      });
-
-      cards.forEach((card) => {
-        const topics = (card.dataset.topics || "")
-          .split(/\s+/)
-          .map((t) => t.trim())
-          .filter(Boolean);
-
-        const shouldShow = activeTopic === "all" || topics.includes(activeTopic);
-
-        // Reuse existing global "display:none !important" class
-        card.classList.toggle("w-condition-invisible", !shouldShow);
-      });
-    }
-
-    tabs.forEach((btn) => {
-      btn.addEventListener("click", () => setActiveTab(btn.dataset.topic));
-    });
-
-    // Ensure a clean initial state (matches the "All" default)
-    setActiveTab("all");
-  </script>
+	<section class="about-hero">
+	   <div class="w-layout-blockcontainer container w-container">
+		  <div class="about-hero-wrap">
+			 <div
+				data-w-id="0e1455f2-2e64-fb89-49f5-7ae8c6e9f138"
+				class="breadcrumbs"
+				>
+				Policy context
+			 </div>
+			 <h2
+				data-w-id="b3fe0d26-17cf-0c70-5125-74cda553b318"
+				class="heading-three pt-20"
+				>
+				Annotated Timeline of Pivotal Climate Policies
+			 </h2>
+			 <div
+				data-poster-url="assets/img/climate-policies.mp4"
+				data-video-urls="assets/img/climate-policies.mp4"
+				data-autoplay="true"
+				data-loop="true"
+				data-wf-ignore="true"
+				data-w-id="d42865bc-a0c3-72a1-ac3c-1b6c68a811c2"
+				class="about-video w-background-video w-background-video-atom"
+				>
+				<video
+				   id="d42865bc-a0c3-72a1-ac3c-1b6c68a811c2-video"
+				   autoplay
+				   loop
+				   muted
+				   playsinline
+				   data-wf-ignore="true"
+				   data-object-fit="cover"
+				   style="background-image: url('assets/img/climate-policies.mp4');"
+				   >
+				   <source
+					  src="assets/img/climate-policies.mp4"
+					  type="video/mp4"
+					  data-wf-ignore="true"
+					  />
+				</video>
+				<noscript>
+				   <style>
+					  [data-wf-bgvideo-fallback-img] {
+					  display: none;
+					  }
+					  @media (prefers-reduced-motion: reduce) {
+					  [data-wf-bgvideo-fallback-img] {
+					  position: absolute;
+					  z-index: -100;
+					  display: inline-block;
+					  height: 100%;
+					  width: 100%;
+					  object-fit: cover;
+					  }
+					  }
+				   </style>
+				   <img
+					  data-wf-bgvideo-fallback-img="true"
+					  src="assets/img/climate-policies.mp4"
+					  alt=""
+					  />
+				</noscript>
+				<div aria-live="polite">
+				   <button
+					  type="button"
+					  data-w-bg-video-control="true"
+					  aria-controls="d42865bc-a0c3-72a1-ac3c-1b6c68a811c2-video"
+					  class="w-backgroundvideo-backgroundvideoplaypausebutton d-none w-background-video--control"
+					  >
+				   <span>
+				   <img
+					  src="https://cdn.prod.website-files.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg"
+					  loading="lazy"
+					  alt="Pause video"
+					  />
+				   </span>
+				   <span hidden>
+				   <img
+					  loading="lazy"
+					  alt="Play video"
+					  src="https://cdn.prod.website-files.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg"
+					  />
+				   </span>
+				   </button>
+				</div>
+			 </div>
+		  </div>
+		  <div class="about-hero-btm">
+			 <div class="about-hero-left">
+				<div class="story-main">
+				   <div class="story-img-wrap">
+					  <img
+						 src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d/68d13b1809efe17b456aba70_story-1.webp"
+						 loading="lazy"
+						 alt="Image"
+						 class="story-img"
+						 />
+					  <img
+						 src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d/68d13b1883d34bed6f0f725b_story-2.webp"
+						 loading="lazy"
+						 alt="Image"
+						 class="story-img _2nd"
+						 />
+					  <img
+						 src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d/68d13b18a18fed353bfe50c6_story-3.webp"
+						 loading="lazy"
+						 alt="Image"
+						 class="story-img _3rd"
+						 />
+				   </div>
+				   <p class="section-content">Global &amp; U.S. highlights</p>
+				</div>
+			 </div>
+			 <div class="about-hero-right">
+				<p class="about-hero-text indent-70">
+				   This page distills major policy milestones into concise, scientist-level notes:
+				   policy mechanism, scope, expected signal on emissions or technology adoption,
+				   and links you may want to consult before deeper reading.
+				</p>
+			 </div>
+		  </div>
+	   </div>
+	</section>
+	
+	<section class="step-area">
+	   <div class="w-layout-blockcontainer container w-container">
+		  <div data-w-id="b1d199e7-54bd-8aec-9f1d-3424c560401a" class="step-wrap">
+			 <div class="step-left">
+				<div class="sticky-wrap">
+				   <div class="sticky-inner">
+					  <h2 class="heading-four">Climate Policy Timeline (for Scientists)</h2>
+					  <p class="section-content">
+						 An annotated sequence of pivotal climate policies—what each one does,
+						 how it works (mechanisms), and why it matters for mitigation, adaptation,
+						 and research. Use this as a quick map before diving into primary sources.
+					  </p>
+					  <a href="/contact" class="btn-secondary w-inline-block"
+						 >
+						 <div>Browse the Timeline</div>
+					  </a
+						 >
+				   </div>
+				   <div class="step-line-wrap">
+					  <div class="step-point _1st">
+						 <div class="step-count">01</div>
+					  </div>
+					  <div class="step-point _2nd">
+						 <div class="step-count">02</div>
+					  </div>
+					  <div class="step-point _3rd">
+						 <div class="step-count">03</div>
+					  </div>
+					  <div class="step-point _4rd">
+						 <div class="step-count">04</div>
+					  </div>
+					  <div class="step-point _4rd">
+						 <div class="step-count">05</div>
+					  </div>
+					  <div class="step-point _4rd">
+						 <div class="step-count">06</div>
+					  </div>
+					  <div class="step-line">
+						 <div class="step-line-bar"></div>
+					  </div>
+				   </div>
+				</div>
+			 </div>
+			 <div class="step-right">
+				<div class="step-card _1st">
+				   <div class="step-number">01</div>
+				   <h3 class="step-title">1997 — Kyoto Protocol</h3>
+				   <p class="step-content">
+					  First binding international agreement to limit GHGs for developed nations.
+					  Mechanism: national caps with emissions trading &amp; CDM/JI. Limitations:
+					  partial coverage, baseline-credit complexity, and uneven participation.
+				   </p>
+				</div>
+				<div class="step-card _2nd">
+				   <div class="step-number">02</div>
+				   <h3 class="step-title">2009 — U.S. EPA Endangerment Finding</h3>
+				   <p class="step-content">
+					  Establishes that GHGs endanger public health and welfare under the Clean Air Act.
+					  Mechanism: unlocks EPA authority to regulate CO₂ and co-emitted species from
+					  mobile &amp; stationary sources; anchors later U.S. rulemakings.
+				   </p>
+				</div>
+				<div class="step-card _3rd">
+				   <div class="step-number">03</div>
+				   <h3 class="step-title">2015 — Paris Agreement</h3>
+				   <p class="step-content">
+					  Global framework with nationally determined contributions (NDCs), transparency,
+					  five-year ratchet cycles, and a temperature goal “well below 2 °C”.
+					  Mechanism: pledge-and-review with measurement, reporting, and verification (MRV).
+				   </p>
+				</div>
+				<div class="step-card _4rd">
+				   <div class="step-number">04</div>
+				   <h3 class="step-title">2022 — U.S. Inflation Reduction Act</h3>
+				   <p class="step-content">
+					  Large-scale incentives for clean electricity, transport, industry, and buildings.
+					  Mechanism: tax credits, rebates, and financing that shift cost curves and drive
+					  deployment; complements standards and state policies.
+				   </p>
+				</div>
+				<!-- LIST:POLICY:START -->
+				<a class="step-card step-card-link" href="/policy_1_methane-myths-in-the-media">
+				   <div class="step-number">05</div>
+				   <h3 class="step-title">2025 — Methane Myths in the Media</h3>
+				   <p class="step-content">How methane is portrayed vs how it's actually measured.</p>
+				</a>
+				<a class="step-card step-card-link" href="/policy_1_methane-myths-in-the-media">
+				   <div class="step-number">06</div>
+				   <h3 class="step-title">2025 — Methane Myths in the Media</h3>
+				   <p class="step-content">How methane is portrayed vs how it's actually measured.</p>
+				</a>
+				<!-- LIST:POLICY:END -->
+			 </div>
+		  </div>
+	   </div>
+	</section>
+                <!--
+                <section class="about-area-two">
+                    <div class="w-layout-blockcontainer container w-container">
+                        <div class="about-top-two">
+                            <div class="breadcrumbs">How to read this</div>
+                            <h2
+                                data-w-id="3adfa44b-fac8-4db8-9023-4fca16c567af"
+                                
+                                class="heading-four"
+                            >
+                                Interpreting the timeline
+                            </h2>
+                        </div>
+                        <div class="about-wrap-two">
+                            <div
+                                data-w-id="9fbbea69-73d6-f431-a96d-42d1d1f2406c"
+                                
+                                class="about-left-two"
+                            >
+                                <div
+                                    data-poster-url="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-poster-00001.jpg"
+                                    data-video-urls="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-transcode.mp4,https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-transcode.webm"
+                                    data-autoplay="true"
+                                    data-loop="true"
+                                    data-wf-ignore="true"
+                                    class="about-video-three w-background-video w-background-video-atom"
+                                >
+                                    <video
+                                        id="fc002274-e292-56e1-a19b-eb211668d678-video"
+                                        autoplay=""
+                                        loop=""
+                                        style="
+                                            background-image: url(&quot;https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-poster-00001.jpg&quot;);
+                                        "
+                                        muted=""
+                                        playsinline=""
+                                        data-wf-ignore="true"
+                                        data-object-fit="cover"
+                                    >
+                                        <source
+                                            src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-transcode.mp4"
+                                            data-wf-ignore="true"
+                                        />
+                                        <source
+                                            src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-transcode.webm"
+                                            data-wf-ignore="true"
+                                        /></video
+                                    ><noscript
+                                        ><style>
+                                            [data-wf-bgvideo-fallback-img] {
+                                                display: none;
+                                            }
+                                            @media (prefers-reduced-motion: reduce) {
+                                                [data-wf-bgvideo-fallback-img] {
+                                                    position: absolute;
+                                                    z-index: -100;
+                                                    display: inline-block;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }</style
+                                        ><img
+                                            data-wf-bgvideo-fallback-img="true"
+                                            src="https://cdn.prod.website-files.com/68c7aacd7c9fdb902f73c74d%2F68dd14d2ba5743415cc5c899_solar-tem-poster-00001.jpg"
+                                            alt=""
+                                    /></noscript>
+                                    <div aria-live="polite">
+                                        <button
+                                            type="button"
+                                            data-w-bg-video-control="true"
+                                            aria-controls="fc002274-e292-56e1-a19b-eb211668d678-video"
+                                            class="w-backgroundvideo-backgroundvideoplaypausebutton d-none w-background-video--control"
+                                        >
+                                            <span
+                                                ><img
+                                                    src="https://cdn.prod.website-files.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg"
+                                                    loading="lazy"
+                                                    alt="Pause video" /></span
+                                            ><span hidden=""
+                                                ><img
+                                                    loading="lazy"
+                                                    alt="Play video"
+                                                    src="https://cdn.prod.website-files.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg"
+                                            /></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-right-two">
+                                <div class="about-content-wrap">
+                                    <p
+                                        data-w-id="8142dd0a-f9c6-3fe3-3084-5fb95bf1d79a"
+                                        
+                                        class="section-content-md indent-70"
+                                    >
+                                        Each entry highlights mechanism (how the policy operates), coverage (who/what it
+                                        affects), and expected signals (emissions, technology adoption). Pair this with
+                                        primary texts and agency guidance when making domain-specific inferences.
+                                    </p>
+                                </div>
+                                <div class="countbox-wrap">
+                                    <div
+                                        id="w-node-_88f9f806-eb23-3c83-6213-6b4f64ca80ce-8d90a5c5"
+                                        data-w-id="88f9f806-eb23-3c83-6213-6b4f64ca80ce"
+                                        
+                                        class="countbox"
+                                    >
+                                        <div class="countbox-top">
+                                            <div data-wf--counter--variant="style-two" class="counter">
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _1st"
+                                                    >
+                                                        5<br />3<br />3<br />2<br />1
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _2nd"
+                                                    >
+                                                        0<br />2<br />3<br />2<br />1
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _3rd"
+                                                    >
+                                                        +<br />+<br />+<br />+<br />+<br />+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="paragraph">01</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        data-w-id="aa4680d3-26c2-503d-ba07-3a70dc12f648"
+                                        
+                                        class="countbox"
+                                    >
+                                        <div class="countbox-top">
+                                            <div data-wf--counter--variant="style-two" class="counter">
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _1st"
+                                                    >
+                                                        9<br />3<br />3<br />2<br />1
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _2nd"
+                                                    >
+                                                        9<br />2<br />3<br />2<br />1
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="counter-inner w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958"
+                                                >
+                                                    <div
+                                                        class="counter-number w-variant-3a415a18-ff2f-abe8-e8a8-48bbd7501958 _3rd"
+                                                    >
+                                                        %<br />%<br />%<br />%<br />%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="paragraph">02</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        id="w-node-_6d60a37e-cbfb-76d4-0524-84b6c9c19fb7-8d90a5c5"
+                                        data-w-id="6d60a37e-cbfb-76d4-0524-84b6c9c19fb7"
+                                        
+                                        class="countbox two"
+                                    >
+                                        <p class="countbox-title">Policies summarized</p>
+                                        <p class="section-content-sm">
+                                            Key milestones spanning international frameworks and U.S. federal anchors.
+                                        </p>
+                                    </div>
+                                    <div
+                                        data-w-id="cfde99e3-4922-8648-1832-5c6c707fd2a4"
+                                        
+                                        class="countbox two"
+                                    >
+                                        <p class="countbox-title">How to use this page</p>
+                                        <p class="section-content-sm">
+                                            Start with the timeline above, then jump into detailed briefs and primary sources.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                -->
 </Site>
