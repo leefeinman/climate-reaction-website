@@ -24,4 +24,4 @@ Body **markdown** here. An image:
 
 DID IT OVERWRITE?
 
-![An image](assets/img/earth_at_night.jpg)
+![An image](/assets/img/earth_at_night.jpg)

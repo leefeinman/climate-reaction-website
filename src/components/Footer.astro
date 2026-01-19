@@ -1,5 +1,6 @@
 ---
 // src/components/Footer.astro
+const year = new Date().getFullYear();
 ---
  			<footer class="footer-area">
  				<div class="w-layout-blockcontainer container w-container">
@@ -24,7 +25,15 @@
  									</a>
  								</li>
  								<li class="nav-item-two">
- 									<a class="footer-link w-inline-block" href="climate-policy">
+ 									<a class="footer-link w-inline-block" href="/action-resources">
+ 										<div class="nav-link-two">
+ 											Action
+ 										</div>
+ 										<img alt class="arrow-right" loading="lazy" src="/assets/img/68d27dd224254b6f9b6a2335_arrow-right-75954563.svg">
+ 									</a>
+ 								</li>
+ 							 	<li class="nav-item-two">
+ 									<a class="footer-link w-inline-block" href="/climate-policy">
  										<div class="nav-link-two">
  											Policy
  										</div>
@@ -66,30 +75,8 @@
  					</div>
  					<div class="footer-copyright" data-w-id="ab93d299-3b29-96eb-810e-55a6992be549">
  						<p class="copyright-text">
- 							&copy; 2025 - Developed by Climate reAction
+ 							&copy; {year} - Developed by Climate reAction
  						</p>
- 						<ul class="nav-two" role="list">
- 							<li class="nav-item">
- 								<a class="nav-link-two" href="https://arvora.webflow.io/404">
- 								404
- 								</a>
- 							</li>
- 							<li class="nav-item">
- 								<a class="nav-link-two" href="https://arvora.webflow.io/templates/licenses">
- 								License
- 								</a>
- 							</li>
- 							<li class="nav-item">
- 								<a class="nav-link-two" href="https://arvora.webflow.io/templates/changelog">
- 								Changelog
- 								</a>
- 							</li>
- 							<li class="nav-item">
- 								<a class="nav-link-two" href="https://arvora.webflow.io/templates/style-guide">
- 								Styleguide
- 								</a>
- 							</li>
- 						</ul>
  					</div>
  				</div>
  			</footer>

@@ -109,7 +109,6 @@ def collect_existing_numbers(section: str) -> set[int]:
             nums.add(int(m.group(1)))
     return nums
 
-# --- NEW: overwrite-by-title support ---------------------------------
 def find_existing_number_for_slug(section: str, title: str) -> int | None:
     """
     If a page already exists for this section+title slug, return its number.
@@ -148,7 +147,6 @@ def assign_or_reuse_number(section: str, title: str, post: frontmatter.Post) -> 
     next_num = max(used) + 1 if used else 1
     post.metadata["blog_number"] = next_num
     return next_num
-# ---------------------------------------------------------------------
 
 def render_astro_page(section: str, title: str, date_s: str, author: str, image: str, html_body: str) -> str:
     html_indented = "\n".join(("            " + ln if ln.strip() else "") for ln in html_body.splitlines())
@@ -163,6 +161,19 @@ def render_astro_page(section: str, title: str, date_s: str, author: str, image:
         html_body_indented=html_indented,
     )
 
+def ensure_root_absolute(url: str) -> str:
+    url = (url or "").strip()
+    if not url:
+        return url
+    # don’t touch full URLs or already-rooted paths
+    if url.startswith(("http://", "https://", "/")):
+        return url
+    # if someone wrote assets/..., make it /assets/...
+    if url.startswith("assets/"):
+        return "/" + url
+    return url
+
+
 def process_one(md_path: Path, post: frontmatter.Post):
     section = (post.get("section") or "").strip().lower()
     title   = (post.get("title") or "").strip()
@@ -176,6 +187,7 @@ def process_one(md_path: Path, post: frontmatter.Post):
 
     html = md.render(post.content or "")
     html = re.sub(r'<img(?![^>]*class=)', r'<img class="blog-inline-image"', html)
+    html = re.sub(r'(<img[^>]+src=")(assets/)', r'\1/\2', html)
 
 
     slug = slugify(title)
@@ -185,7 +197,7 @@ def process_one(md_path: Path, post: frontmatter.Post):
 
     date_s = (str(post.get("date")) or "").strip()
     author = (post.get("author") or "").strip()
-    image  = (post.get("image") or "").strip()
+    image  = ensure_root_absolute(post.get("image") or "")
     astro  = render_astro_page(section, title, date_s, author, image, html)
     out_path.write_text(astro, encoding="utf-8")
 

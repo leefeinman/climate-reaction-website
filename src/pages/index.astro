@@ -1,7 +1,28 @@
 ---
 // src/pages/index.astro
 import Site from "../layouts/Site.astro";
+
+const SHEET_ID = import.meta.env.PUBLIC_SHEET_ID;
+const API_KEY  = import.meta.env.GOOGLE_SHEETS_API_KEY;
+
+// Member Counter Cell
+const range = "A2";
+
+const url =
+  `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
+
+let value = "0";
+
+try {
+  const res = await fetch(url);
+  const json = await res.json();
+  value = json?.values?.[0]?.[0] ?? "0";
+} catch (err) {
+  console.error("Sheets fetch failed", err);
+}
 ---
+
+
 
 <Site title="Home">
     <main class="main-wrap">
@@ -40,7 +61,7 @@ import Site from "../layouts/Site.astro";
                              <div class="counter" data-wf--counter--variant="white">
                                 <div class="counter-inner w-variant-15d9edb8-9dd2-755b-c89f-54c722ca2bea">
                                     <div class="counter-number w-variant-15d9edb8-9dd2-755b-c89f-54c722ca2bea _1st">
-                                        21
+                                        {value}
                                     </div>
                                 </div>
                                 <!--<div class="counter-inner w-variant-15d9edb8-9dd2-755b-c89f-54c722ca2bea">
@@ -193,9 +214,10 @@ import Site from "../layouts/Site.astro";
                     </div>
                 </div>
             </div>
+           
+           <!--
             <div class="brand-wrap">
                 <div class="brand-track">
-                    <!-- ORIGINAL SET -->
                     <div class="brand-item">
                         <img alt="Partner logo" class="brand-logo" loading="lazy" src="assets/img/cires_CU.png" style="height:120px;width:auto;">
                     </div>
@@ -207,7 +229,6 @@ import Site from "../layouts/Site.astro";
                     </div>
                     
                     
-                    <!-- DUPLICATED SET -->
                     <div class="brand-item">
                         <img alt="Partner logo" class="brand-logo" loading="lazy" src="assets/img/cires_CU.png" style="height:120px;width:auto;">
                     </div>
@@ -218,7 +239,6 @@ import Site from "../layouts/Site.astro";
                         <img alt="Partner logo" class="brand-logo" loading="lazy" src="assets/img/CU_chem.png" style="height:120px;width:auto;">
                     </div> 
                     
-                    <!-- ORIGINAL SET -->
                     <div class="brand-item">
                         <img alt="Partner logo" class="brand-logo" loading="lazy" src="assets/img/cires_CU.png" style="height:120px;width:auto;">
                     </div>
@@ -230,7 +250,6 @@ import Site from "../layouts/Site.astro";
                     </div>
                     
                     
-                    <!-- DUPLICATED SET -->
                     <div class="brand-item">
                         <img alt="Partner logo" class="brand-logo" loading="lazy" src="assets/img/cires_CU.png" style="height:120px;width:auto;">
                     </div>
@@ -244,6 +263,8 @@ import Site from "../layouts/Site.astro";
                                        
                 </div>
             </div>
+            -->
+                
         </section>
         <!-- <section class="solution-area" data-w-id="41b5ef30-dbcc-0431-8ccd-4973b4ac3a55">
             <div class="w-layout-blockcontainer container w-container">

@@ -5930,10 +5930,9 @@ blockquote {
   color: var(--white--100);
 }
 
-/* color variants 
+/* color variants */
 .resource-card--brown { --resource-bg: #482226; }
 .resource-card--purple { --resource-bg: #782675; }
 .resource-card--blue { --resource-bg: #264dc5; }
 .resource-card--teal { --resource-bg: #1b7589; }
 .resource-card--green { --resource-bg: #096355; }
-*/
