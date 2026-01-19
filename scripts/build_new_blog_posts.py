@@ -161,17 +161,17 @@ def render_astro_page(section: str, title: str, date_s: str, author: str, image:
         html_body_indented=html_indented,
     )
 
-def ensure_root_absolute(url: str) -> str:
-    url = (url or "").strip()
-    if not url:
-        return url
-    # don’t touch full URLs or already-rooted paths
-    if url.startswith(("http://", "https://", "/")):
-        return url
-    # if someone wrote assets/..., make it /assets/...
-    if url.startswith("assets/"):
-        return "/" + url
-    return url
+# def ensure_root_absolute(url: str) -> str:
+#     url = (url or "").strip()
+#     if not url:
+#         return url
+#     # don’t touch full URLs or already-rooted paths
+#     if url.startswith(("http://", "https://", "/")):
+#         return url
+#     # if someone wrote assets/..., make it /assets/...
+#     if url.startswith("assets/"):
+#         return "/" + url
+#     return url
 
 
 def process_one(md_path: Path, post: frontmatter.Post):
@@ -187,7 +187,7 @@ def process_one(md_path: Path, post: frontmatter.Post):
 
     html = md.render(post.content or "")
     html = re.sub(r'<img(?![^>]*class=)', r'<img class="blog-inline-image"', html)
-    html = re.sub(r'(<img[^>]+src=")(assets/)', r'\1/\2', html)
+    # html = re.sub(r'(<img[^>]+src=")(assets/)', r'\1/\2', html)
 
 
     slug = slugify(title)
@@ -197,7 +197,8 @@ def process_one(md_path: Path, post: frontmatter.Post):
 
     date_s = (str(post.get("date")) or "").strip()
     author = (post.get("author") or "").strip()
-    image  = ensure_root_absolute(post.get("image") or "")
+    image  = (post.get("image") or "").strip()
+    # image  = ensure_root_absolute(post.get("image") or "")
     astro  = render_astro_page(section, title, date_s, author, image, html)
     out_path.write_text(astro, encoding="utf-8")
 
